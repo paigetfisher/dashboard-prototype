@@ -3641,19 +3641,15 @@ function renderInsightDetailContent() {
         { label: "Lunch",     avg: "$36", thisWeek: "$35", diff: "$0",  arrow: "none", sentiment: "neutral" }
       ]
     },
-    // wellInsights[1] - Average minutes early by day of week
+    // wellInsights[1] - Labor cost % by shift, Saturday May 10
     3: {
-      title: "Average minutes early by day of week",
-      headerLabel: "Day",
+      title: "Labor cost % by shift",
+      headerLabel: "Shift",
       rows: [
-        { label: "Monday",         avg: "19 min", thisWeek: "28 min", diff: "9 min",  arrow: "up", sentiment: "bad" },
-        { label: "Tuesday",        avg: "17 min", thisWeek: "24 min", diff: "7 min",  arrow: "up", sentiment: "bad" },
-        { label: "Wednesday",      avg: "21 min", thisWeek: "31 min", diff: "10 min", arrow: "up", sentiment: "bad" },
-        { label: "Thursday",       avg: "23 min", thisWeek: "35 min", diff: "12 min", arrow: "up", sentiment: "bad" },
-        { label: "Friday",         avg: "26 min", thisWeek: "41 min", diff: "15 min", arrow: "up", sentiment: "bad" },
-        { label: "Saturday",       avg: "28 min", thisWeek: "43 min", diff: "15 min", arrow: "up", sentiment: "bad" },
-        { label: "Sunday",         avg: "22 min", thisWeek: "22 min", diff: "no change",    arrow: "none", sentiment: "neutral" },
-        { label: "Weekly average", avg: "22 min", thisWeek: "32 min", diff: "10 min", arrow: "up", sentiment: "bad" }
+        { label: "Open (10am–3pm)",     avg: "44%", thisWeek: "34%", diff: "10", arrow: "down", sentiment: "good" },
+        { label: "Afternoon (3pm–7pm)", avg: "38%", thisWeek: "27%", diff: "11", arrow: "down", sentiment: "good" },
+        { label: "Evening (7pm–close)", avg: "34%", thisWeek: "22%", diff: "12", arrow: "down", sentiment: "good" },
+        { label: "Full day",            avg: "38%", thisWeek: "27%", diff: "11", arrow: "down", sentiment: "good" }
       ]
     }
   };
@@ -3667,7 +3663,7 @@ function renderInsightDetailContent() {
 
   var table = document.createElement("table"); table.className = "idd-table";
   var thead = document.createElement("thead");
-  thead.innerHTML = '<tr><th style="width:35%">'+tblData.headerLabel+'</th><th style="width:22%">3-wk avg</th><th style="width:22%">This week</th><th style="width:21%">Difference</th></tr>';
+  thead.innerHTML = '<tr><th style="width:35%">'+tblData.headerLabel+'</th><th style="width:22%">'+(tblData.colB||'3-wk avg')+'</th><th style="width:22%">'+(tblData.colC||'This week')+'</th><th style="width:21%">Difference</th></tr>';
   table.appendChild(thead);
 
   var tbody = document.createElement("tbody");
